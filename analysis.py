@@ -1,11 +1,17 @@
 from os import listdir
 from os.path import isfile, join
-
+"""
 files = ["nanocall7.3.error_profile.txt", \
         "nanocall9.error_profile.txt", \
         "deepnano_metrichor_r73.error_profile.txt", \
         "deepnano_r9.error_profile.txt", \
         "metrichor_r9.error_profile.txt"]
+"""
+files = ["nanocall7.3.new_error_profile.txt", \
+        "nanocall9.new_error_profile.txt", \
+        "deepnano_metrichor_r73.new_error_profile.txt", \
+        "deepnano_r9.new_error_profile.txt", \
+        "metrichor_r9.new_error_profile.txt"]
 """ 
 error_profile file format: 
     [0]QUERY_NAME
@@ -141,7 +147,7 @@ print "METRICHOR_R9"
 get_avg_statistics(metrichor_r9)
 
 
-f = open("r7_1d_res", "w")
+f = open("r7_1d_res_new", "w")
 for key in deepnano_r7_1d:
     if key not in nanocall_r7:
         f.write("0, 0, 0, 0")
@@ -164,7 +170,7 @@ for key in deepnano_r7_1d:
         cal_identity(items)))
 f.close()
 
-f = open("r7_2d_res", "w")
+f = open("r7_2d_res_new", "w")
 for key in deepnano_r7_2d:
     items = deepnano_r7_2d[key]
     f.write("%d, %d, %f, %f" % (items[0],\
@@ -179,7 +185,7 @@ for key in deepnano_r7_2d:
         cal_identity(items)))
 f.close()
 
-f = open("r9_res", "w")
+f = open("r9_res_new", "w")
 for key in deepnano_r9:
     
     items = nanocall_r9[key]
